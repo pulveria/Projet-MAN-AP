@@ -18,6 +18,7 @@ void destroy_dico(dico *d){
     for(int i=0;i<NB_KEYS;i++){
         if ((*d)[i] != NULL){
             destroy_dico(&((*d)[i]->children));
+            free((*d)[i]);
             (*d)[i]=NULL;
         }
     }
@@ -329,4 +330,3 @@ char * next (iterator * it){
     } while(end_of_word==0);
     return it->word;
 }
-
