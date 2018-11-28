@@ -5,6 +5,8 @@ int main(){
     puts("Creation d'un dictionnaire vide");
     dico d=create_dico();
     printf("\n");
+    print_prefixe(d);
+    printf("\n");
 
     puts("On ajoute dans le dictionnaire: {ours, ourse, ourson, oursonne, brule, ours, brille, ours, bateau, bord, bordeau}");
     add_rec(d, "ours", 4);

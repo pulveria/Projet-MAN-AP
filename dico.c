@@ -80,6 +80,14 @@ void print(dico d, char s[30]){
 }
 
 void print_prefixe(dico d){
+    int vide=1;
+    for(int i=0;i<NB_KEYS;i++){
+        if(d[i]!=NULL) vide=0;
+    }
+    if(vide==1){
+        puts("Le dictionnaire est vide !");
+        return;
+    }
     char s[30]="";
     print(d, s);
 }
@@ -247,6 +255,14 @@ void affiche(dico d, char s[30]){
 }
 
 void print_dico(dico d){
+    int vide=1;
+    for(int i=0;i<NB_KEYS;i++){
+        if(d[i]!=NULL) vide=0;
+    }
+    if(vide==1){
+        puts("Le dictionnaire est vide !");
+        return;
+    }
     char s[30]="";
     affiche(d, s);
 }
@@ -314,139 +330,3 @@ char * next (iterator * it){
     return it->word;
 }
 
-
-
-/*******************************************************************************
- TESTS
-********************************************************************************/
-
-
-/*
-    printf("avant le test\n");
-    char c= get_char(0);
-    printf("%c \n",c);
-
-    unsigned i= get_index('g');
-    printf("%d\n",i);
-
-    unsigned a= get_index('a');
-    printf("%d\n",a);
-*/
-
-/*
-    dico d=create_dico();
-
-    add_rec(d, "ours", 4);
-    add_rec(d, "ourse", 5);
-    add_rec(d, "ourson", 6);
-    add_rec(d, "oursonne", 8);
-    add_rec(d, "brule", 5);
-    add_rec(d, "brille", 6);
-    add_rec(d, "bord", 4);
-    add_rec(d, "bordeau", 7);
-    add_rec(d, "bateau", 6);
-    print_prefixe(d);
-    printf("\n");
-    print_dico(d);
-
-    iterator * dit = start_iterator(d);
-    printf("\n");
-    while (has_next(dit)) printf("-%s", next(dit));
-    printf("\n");
-    destroy_iterator(&dit);
-
-    destroy_dico(&d);
-*/
-
-/*
-    dico d=create_dico();
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-    add_iter(d, "ourse", 5);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-    add_iter(d, "ours", 4);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-    add_iter(d, "oursonne", 8);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-    add_iter(d, "ourson", 6);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-
-    dico d2=create_dico();
-    printf("Les dicos sont egaux ? : %d\n", equals(d, d2));
-    add_rec(d2, "ours", 4);
-    printf("Les dicos sont egaux ? : %d\n", equals(d, d2));
-    add_rec(d2, "ourse", 5);
-    printf("Les dicos sont egaux ? : %d\n", equals(d, d2));
-    add_rec(d2, "ourson", 6);
-    printf("Les dicos sont egaux ? : %d\n", equals(d, d2));
-    add_rec(d2, "oursonne", 8);
-    printf("Les dicos sont egaux ? : %d\n", equals(d, d2));
-    printf("\n");
-    remove_rec(d2, "ours", 4);
-    remove_rec(d2, "ourse", 5);
-    remove_rec(d2, "ourson", 6);
-    destroy_dico(&d2);
-
-
-    remove_iter(d, "ours", 4);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-    remove_iter(d, "oursonne", 8);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-    remove_iter(d, "ourse", 5);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-    printf("\n");
-
-    remove_iter(d, "ourson", 6);
-    print_prefixe(d);
-    printf("nombre de mots=%d\n", nb_words(d));
-    print_dico(d);
-    printf("nombre de nodes=%d\n", nb_nodes(d));
-    printf("taille=%d\n", height(d));
-
-    destroy_dico(&d);
-*/

@@ -3,6 +3,8 @@
 int main(){
   puts("Création d'un dictionnaire vide");
   dico d=create_dico();
+  print_prefixe(d);
+  printf("\n");
   puts("On ajoute (iter) dans le dictionnaire: {ours, ourse, oursonne, ourson, brule, ours, brille, ours, zoo}");
 
   puts("On ajoute ours");
